@@ -5,43 +5,136 @@ class PostIt {
   final String sender;
   final String message;
   final String time;
+  final CircleAvatar avatar;
 
-  PostIt({required this.sender, required this.message, required this.time});
+  PostIt(
+      {required this.sender,
+      required this.message,
+      required this.time,
+      required this.avatar});
 }
 
 final List<PostIt> postIts = [
   PostIt(
-      sender: "Homer Simpson",
-      message: "Who wants a beer at Moe's?",
-      time: "19:14"),
-  PostIt(sender: "Bart Simpson", message: "You're bald :P?", time: "19:14"),
+    sender: "Homer Simpson",
+    message: "Who wants a beer at Moe's?",
+    time: "19:14",
+    avatar: const CircleAvatar(
+      radius: 25.0,
+      backgroundImage: AssetImage('images/homer.jpeg'),
+      backgroundColor: Colors.white,
+    ),
+  ),
   PostIt(
-      sender: "Ned Flanders",
-      message: "My garden is so beautiful :)",
-      time: "19:12"),
+    sender: "Bart Simpson",
+    message: "You're bald :P?",
+    time: "19:14",
+    avatar: const CircleAvatar(
+      radius: 25.0,
+      backgroundImage: AssetImage('images/bart.png'),
+      backgroundColor: Colors.white,
+    ),
+  ),
   PostIt(
-      sender: "Mr. Burns",
-      message: "I'm gonna buy this app just cause",
-      time: "19:10"),
+    sender: "Ned Flanders",
+    message: "My garden is so beautiful :)",
+    time: "19:12",
+    avatar: const CircleAvatar(
+      radius: 25.0,
+      backgroundImage: AssetImage('images/ned.webp'),
+      backgroundColor: Colors.white,
+    ),
+  ),
   PostIt(
-      sender: "Krusty", message: "This burgers are the best!", time: "19:07"),
-  PostIt(sender: "Fat Tony", message: "Always Watching O_O", time: "19:02"),
+    sender: "Mr. Burns",
+    message: "I'm gonna buy this app just cause",
+    time: "19:10",
+    avatar: const CircleAvatar(
+      radius: 25.0,
+      backgroundImage: AssetImage('images/icon.png'),
+      backgroundColor: Colors.white,
+    ),
+  ),
   PostIt(
-      sender: "Homer Simpson",
-      message: "Who wants a beer at Moe's?",
-      time: "19:14"),
-  PostIt(sender: "Bart Simpson", message: "You're bald :P?", time: "19:14"),
+    sender: "Krusty",
+    message: "This burgers are the best!",
+    time: "19:07",
+    avatar: const CircleAvatar(
+      radius: 25.0,
+      backgroundImage: AssetImage('images/krusty.png'),
+      backgroundColor: Colors.white,
+    ),
+  ),
   PostIt(
-      sender: "Ned Flanders",
-      message: "My garden is so beautiful :)",
-      time: "19:12"),
+    sender: "Fat Tony",
+    message: "Always Watching O_O",
+    time: "19:02",
+    avatar: const CircleAvatar(
+      radius: 25.0,
+      backgroundImage: AssetImage('images/tony.webp'),
+      backgroundColor: Colors.white,
+    ),
+  ),
   PostIt(
-      sender: "Mr. Burns",
-      message: "I'm gonna buy this app just cause",
-      time: "19:10"),
+    sender: "Homer Simpson",
+    message: "Who wants a beer at Moe's?",
+    time: "19:14",
+    avatar: const CircleAvatar(
+      radius: 25.0,
+      backgroundImage: AssetImage('images/homer.jpeg'),
+      backgroundColor: Colors.white,
+    ),
+  ),
   PostIt(
-      sender: "Krusty", message: "This burgers are the best!", time: "19:07"),
-  PostIt(sender: "Fat Tony", message: "Always Watching O_O", time: "19:02"),
+    sender: "Bart Simpson",
+    message: "You're bald :P?",
+    time: "19:14",
+    avatar: const CircleAvatar(
+      radius: 25.0,
+      backgroundImage: AssetImage('images/bart.png'),
+      backgroundColor: Colors.white,
+    ),
+  ),
+  PostIt(
+    sender: "Ned Flanders",
+    message: "My garden is so beautiful :)",
+    time: "19:12",
+    avatar: const CircleAvatar(
+      radius: 25.0,
+      backgroundImage: AssetImage('images/ned.webp'),
+      backgroundColor: Colors.white,
+    ),
+  ),
+  PostIt(
+    sender: "Mr. Burns",
+    message: "I'm gonna buy this app just cause",
+    time: "19:10",
+    avatar: const CircleAvatar(
+      radius: 25.0,
+      backgroundImage: AssetImage('images/icon.png'),
+      backgroundColor: Colors.white,
+    ),
+  ),
+  PostIt(
+    sender: "Krusty",
+    message: "This burgers are the best!",
+    time: "19:07",
+    avatar: const CircleAvatar(
+      radius: 25.0,
+      backgroundImage: AssetImage('images/krusty.png'),
+      backgroundColor: Colors.white,
+    ),
+  ),
+  PostIt(
+    sender: "Fat Tony",
+    message: "Always Watching O_O",
+    time: "19:02",
+    avatar: const CircleAvatar(
+      radius: 25.0,
+      backgroundImage: AssetImage('images/tony.webp'),
+      backgroundColor: Colors.white,
+    ),
+  ),
 ];
 
 class HomePage extends StatefulWidget {
@@ -91,7 +184,7 @@ class _HomePageState extends State<HomePage> {
             ],
             actionExtentRatio: 1 / 5,
             child: ListTile(
-              leading: const Icon(Icons.person_2_outlined),
+              leading: postIt.avatar,
               title: Text(postIt.sender),
               subtitle: Text(postIt.message),
               trailing: Text(postIt.time),

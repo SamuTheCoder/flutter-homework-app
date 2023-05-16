@@ -37,15 +37,22 @@ class _RootPageState extends State<RootPage> {
       length: 2,
       child: Scaffold(
         appBar: AppBar(
-          title: const Center(child: Text("Post-It")),
+          title: const Center(
+              child: Text(
+            "Post-It",
+            style: TextStyle(color: Colors.amber),
+          )),
           bottom: const TabBar(tabs: [
             Tab(
               text: "Home",
-              icon: Icon(Icons.home),
+              icon: Icon(
+                Icons.home,
+                color: Colors.amber,
+              ),
             ),
             Tab(
               text: "Profile",
-              icon: Icon(Icons.person),
+              icon: Icon(Icons.person, color: Colors.amber),
             ),
           ]),
         ),
